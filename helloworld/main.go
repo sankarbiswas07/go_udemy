@@ -1,0 +1,9 @@
+// Hello world type program
+
+package main
+
+import "fmt"
+
+func main() {
+	fmt.Println("Hi there !")
+}
