@@ -7,7 +7,13 @@ func newCard() string {
 }
 
 func main() {
-	card := newCard()
+	// In Go: there are two types of array - 1. fixed size & 2. slice(fancy name of a array which can grow or shrink)
+	// here we are writing slice and iterate over it
 
-	fmt.Println(card)
+	cards := [] string { "Ace of Heart", newCard()}
+	cards = append(cards, "Four of Heart")
+
+	for i, card := range cards {
+	 fmt.Println(i, card)
+	}
 }
