@@ -4,7 +4,14 @@ import "fmt"
 
 type deck []string
 
+// Receiver function
+func (d deck) print(){
+	for i, card := range d {
+		fmt.Println(i, card)
+	 }
+}
 
+// General function without parameter passing as an argument
 func newDeck() deck {
 	cards := deck{}
 
@@ -20,12 +27,7 @@ func newDeck() deck {
 	return cards
 }
 
+// General function with parameter passing as an argument
 func deal(d deck, handSize int) (deck, deck){
 	return d[:handSize], d[handSize:]
-}
-
-func (d deck) print(){
-	for i, card := range d {
-		fmt.Println(i, card)
-	 }
 }
