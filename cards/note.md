@@ -1,3 +1,11 @@
+
+
+// go run main.go deck.go
+// Here we have made a custom dec type which is actually a slice of type string
+// type deck []string
+
+======================
+
 // Making a function which will make the cards list
 // when we do not use index variable, put _ : go will understand and not showing errors
 // func newDeck()
@@ -10,7 +18,6 @@
 // func deal(d deck, handSize int) (deck, deck)
 
 ======================
-
 
 // here "d" is the receiver
 // Actual copy of the deck we'er working with is d
@@ -26,4 +33,16 @@
 
 ======================
 
-// 
+// assign multiple variables form multiple return value
+// hand, remainingDeck := deal(cards, 5)
+// hand.print()
+// remainingDeck.print()
+
+======================
+
+//  PLAN : CARDS === newDeck > print > shuffle > deal > saveToFile > newDeckFromFile
+
+// from the above plan, we are making small parts. 
+// 1. Make custom type of deck which is a slice.
+// 2. Deck creation function newDeck().
+// 3. We have to save it in a file. so we need type conversion. file write needs Byte type slice
