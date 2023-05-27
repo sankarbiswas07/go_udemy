@@ -3,9 +3,7 @@ package main
 import (
 	"fmt"
 	"strings"
-	// "io"
 	"os"
-	// "io/ioutil"
 )
 
 
@@ -22,23 +20,10 @@ func (d deck) toString() string {
 	return strings.Join([]string(d),",")
 }
 
-// ioutil.WriteFile is deprecated in latest go version
-// so using io.WriteString -> https://pkg.go.dev/io@go1.20.4#WriteString
 
-func (d deck) saveToFile(filename string) {
-
-	file, _ := os.Create(filename)
-	// if (err != nil) {
-	// 	return err
-	// }
-
-	file.WriteString(d.toString())
-	file.Close()
+func (d deck) saveToFile(filename string) error {
+	return os.WriteFile(filename, []byte(d.toString()), 0666)
 }
-
-// func (d deck) saveToFile(filename string) error {
-// 	return ioutil.WriteFile(filename, []byte(d.toString()), 0666)
-// }
 
 
 // General function without parameter passing as an argument
