@@ -4,10 +4,10 @@ package main
 
 func main() {
 
-	cards:= newDeck()
+	// cards:= newDeck()
+	// cards.saveToFile("my_deck")
 
-	cards.saveToFile("my_deck")
-
-	// fmt.Println(cards.toString())
+	cards := newDeckFromFile("my_deck")
+	cards.print()
 
 }
