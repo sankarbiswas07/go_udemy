@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"strings"
 	"os"
+	"math/rand"
 )
 
 
@@ -18,6 +19,13 @@ func (d deck) print(){
 
 func (d deck) toString() string {
 	return strings.Join([]string(d),",")
+}
+
+func (d deck) shuffle() deck {
+	rand.Shuffle(len(d), func(i, j int){
+		d[i], d[j] = d[j], d[i]
+	})
+	return d
 }
 
 
@@ -35,7 +43,6 @@ func newDeckFromFile(filename string) deck {
 	s:= strings.Split(string(bs),",")
 	return deck(s)
 }
-
 
 // General function without parameter passing as an argument
 func newDeck() deck {
