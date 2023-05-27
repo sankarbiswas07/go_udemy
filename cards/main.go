@@ -1,16 +1,19 @@
 package main
 
+import "fmt"
 
 func main() {
 
 	cards:= newDeck()
 
+	fmt.Println(cards.toString())
+
 	// assign multiple variables form multiple return value
 
-	hand, remainingDeck := deal(cards, 5)
+	// hand, remainingDeck := deal(cards, 5)
 
-	hand.print()
-	remainingDeck.print()
+	// hand.print()
+	// remainingDeck.print()
 
 }
 

@@ -1,6 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
+
 
 type deck []string
 
@@ -10,6 +14,12 @@ func (d deck) print(){
 		fmt.Println(i, card)
 	 }
 }
+
+func (d deck) toString() string {
+	return strings.Join([]string(d),",")
+}
+
+
 
 // General function without parameter passing as an argument
 func newDeck() deck {
