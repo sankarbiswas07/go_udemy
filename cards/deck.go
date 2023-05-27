@@ -7,7 +7,6 @@ import (
 	"math/rand"
 )
 
-
 type deck []string
 
 // Receiver function
@@ -27,7 +26,6 @@ func (d deck) shuffle() deck {
 	})
 	return d
 }
-
 
 func (d deck) saveToFile(filename string) error {
 	return os.WriteFile(filename, []byte(d.toString()), 0666)
