@@ -18,6 +18,16 @@ type person struct {
 	contact
 }
 
+// RAM ALLOCATION
+
+// Address		Value
+// 0000			  -
+// 0001			  In main function it creates the first user struct
+// 0002			  -
+// 0003			  func (p person) updateName(newFirstName string) | here p is the copy of person with different memory allocation
+// 0004			  -
+
+
 
 func main(){
 	user := person{
