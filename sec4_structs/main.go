@@ -24,4 +24,18 @@ func main(){
 	fullName_2 := person{firstName:"Sankar", lastName:"Prasad Biswas"}
 	fmt.Println(fullName_2)
 
+	// WAY:3 - to create struct, create a variable of type person
+	// this actually means there is all the keys with "" empty string
+
+	var fullName_3 person
+	fmt.Println(fullName_3)
+	fmt.Printf("%+v \n", fullName_3)
+	
+	// UPDATE
+	fullName_3.firstName = "Sankar"
+	fullName_3.lastName = "Prasad Biswas"
+
+	fmt.Println(fullName_3)
+	fmt.Printf("%+v \n", fullName_3)
+
 }
