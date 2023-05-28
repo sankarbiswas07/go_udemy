@@ -28,6 +28,14 @@ type person struct {
 // 0004			  -
 
 
+// KEY NOTE POINT 1 -
+// Turn "Value" into "Address" with "&value"
+// Turn "Address" into "Value" with "*address"
+
+// KEY NOTE POINT 2 -
+// Difference between *person & *pointerToPerson
+// *person : in receiver func (pointerToPerson *person), this is an "type description" - it means we're working with a pointer to a person
+// *pointerToPerson : in (*pointerToPerson).firstName, this is an "operator" - it means we want to manipulate the value the pointer is referring
 
 func main(){
 	user := person{
@@ -57,5 +65,5 @@ func (p person) print(){
 func (pointerToPerson *person) updateName(newFirstName string){
 
 	// *pointerToPerson means take the pointerToPerson and give the value of the pointer
-	(*pointerToPerson).firstName = newFirstName
+	(*pointerToPerson).firstName = newFirstName // So we can able to update the firstName of the value of user
 }

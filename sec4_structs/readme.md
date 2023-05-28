@@ -35,3 +35,22 @@ type person struct {
 	// This is nothing but nested objects
 	// step 1: like person, you have to create one struct "type"
 	// step 2: make a key in the parent object of that particular struct "type"(step 1)
+
+
+
+  =========================
+
+  POINTER: 
+  // RAM ALLOCATION
+
+// Address		Value
+// 0000			  -
+// 0001			  In main function it creates the first user struct
+// 0002			  -
+// 0003			  func (p person) updateName(newFirstName string) | here p is the copy of person with different memory allocation
+// 0004			  -
+
+
+// KEY NOTE POINT -
+// Turn "Value" into "Address" with "&value"
+// Turn "Address" into "Value" with "*address"
