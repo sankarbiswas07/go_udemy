@@ -29,6 +29,7 @@ func main(){
 		},
 	}
 
+	user.updateName("S.")
 	user.print()
 }
 
@@ -36,4 +37,8 @@ func main(){
 
 func (p person) print(){
 	fmt.Printf("%+v \n", p)
+}
+
+func (p person) updateName(newFirstName string){
+	p.firstName = newFirstName
 }
