@@ -47,9 +47,11 @@ func main(){
 		},
 	}
 
-	userPointer := &user // assigning memory address, & = returns a pointer, a memory address access not the struct directly
+	// userPointer := &user // assigning memory address, & = returns a pointer, a memory address access not the struct directly
+	// userPointer.updateName("S.")
 
-	userPointer.updateName("S.")
+	// Here we can write Type of *person, or a pointer to a person
+	user.updateName("S.")
 	user.print()
 }
 
@@ -62,6 +64,8 @@ func (p person) print(){
 // *person => not the actual value of the pointer(person) pointed to a memory address
 // it is type description not the operator to get the value
 // conclude : userPointer is equal to pointerToPerson which is referring the pointer of user struct
+// RECEIVER FUNCTION WITH STRUCTS : Shortcut note :
+// receiver function can take either Type of *person, or a pointer to a person
 func (pointerToPerson *person) updateName(newFirstName string){
 
 	// *pointerToPerson means take the pointerToPerson and give the value of the pointer
