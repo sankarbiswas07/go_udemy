@@ -20,8 +20,7 @@ type person struct {
 
 
 func main(){
-
-	fullName_4 := person{
+	user := person{
 		firstName:"Sankar",
 		lastName:"Prasad Biswas",
 		contact: contact{
@@ -29,7 +28,12 @@ func main(){
 			phone: "+91 8961766682",
 		},
 	}
-	fmt.Println(fullName_4)
-	fmt.Printf("%+v \n", fullName_4)
 
+	user.print()
+}
+
+// RECEIVER FUNCTION WITH STRUCTS
+
+func (p person) print(){
+	fmt.Printf("%+v \n", p)
 }
