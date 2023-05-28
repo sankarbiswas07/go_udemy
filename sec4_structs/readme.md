@@ -54,3 +54,12 @@ type person struct {
 // KEY NOTE POINT -
 // Turn "Value" into "Address" with "&value"
 // Turn "Address" into "Value" with "*address"
+
+
+// 47. Gotchas With Pointer:
+// Go is a Pass By Value type language
+// Either you can Pass value as functional argument
+// Or you can make Receiver function
+// You can use the copy of the actual value or you can pass the pointer 
+
+// Conclude - we can pass slice in function and modify directly with ut pointer, But with Struct - it is working differently (gotcha !!!)
