@@ -58,8 +58,27 @@ type person struct {
 
 // 47. Gotchas With Pointer:
 // Go is a Pass By Value type language
-// Either you can Pass value as functional argument
+// Either you can Pass value as functional argument -  when we
 // Or you can make Receiver function
 // You can use the copy of the actual value or you can pass the pointer 
 
 // Conclude - we can pass slice in function and modify directly with ut pointer, But with Struct - it is working differently (gotcha !!!)
+
+
+// 48. Reference vs Value types
+
+// Slices are a type of array which can grow and shrink
+// Slice is data structure that records the length of the slice(current), the capacity of the slice, and a reference to the underlying array
+// Slice data structure has it's own structure and a fixed size array structure underlying data structure
+
+===========================================================
+// Value Types                          Reference Types
+// Use pointers to change               Don't worry about
+// these things in a func               pointer with these
+===========================================================
+// int                                  slices
+// float                                maps
+// string                               channels
+// bool                                 pointers
+// structs                              functions
+===========================================================
