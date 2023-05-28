@@ -39,7 +39,7 @@ func main(){
 		},
 	}
 
-	userPointer := &user // assigning memory address
+	userPointer := &user // assigning memory address, & = returns a pointer, a memory address access not the struct directly
 
 	userPointer.updateName("S.")
 	user.print()
@@ -51,6 +51,11 @@ func (p person) print(){
 	fmt.Printf("%+v \n", p)
 }
 
+// *person => not the actual value of the pointer(person) pointed to a memory address
+// it is type description not the operator to get the value
+// conclude : userPointer is equal to pointerToPerson which is referring the pointer of user struct
 func (pointerToPerson *person) updateName(newFirstName string){
+
+	// *pointerToPerson means take the pointerToPerson and give the value of the pointer
 	(*pointerToPerson).firstName = newFirstName
 }
