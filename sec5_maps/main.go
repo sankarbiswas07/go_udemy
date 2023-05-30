@@ -58,7 +58,7 @@ func printMap (c colors){
 // 6. Reference Type!
 
 
-// VALUE:
+// Struct:
 // 1. Values can be of different type
 // 2. Keys don't support indexing
 // 3. You need to know all the different fields at compile time
