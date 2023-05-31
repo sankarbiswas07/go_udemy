@@ -17,7 +17,9 @@ For eg:
 
     Similarly,
         func (s []float64) shuffle() { ... some code ...} :  Can only shuffle a value of type "[]float64"
+        
         func (s []string) shuffle() { ... some code ...} :  Can only shuffle a value of type "[]string"
+        
         func (s []int) shuffle() { ... some code ...} :  Can only shuffle a value of type "[]int"
 
 We actually can optimize the code a little by sing interfaces.
