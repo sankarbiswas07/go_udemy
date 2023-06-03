@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"net/http"
 	"os"
+	"io"
 )
 
 func main() {
@@ -14,10 +15,15 @@ func main() {
 		os.Exit(1)
 	}
 
+	// Short-hand
+	// se io.Copy
 
-	bs := make([]byte, 99)
-	resp.Body.Read(bs)
+	io.Copy(os.Stdout, resp.Body)
 
-	fmt.Println(string(bs))
+
+	// bs := make([]byte, 99)
+	// resp.Body.Read(bs)
+
+	// fmt.Println(string(bs))
 	// fmt.Println(resp)
 }
