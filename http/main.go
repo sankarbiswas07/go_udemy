@@ -14,5 +14,10 @@ func main() {
 		os.Exit(1)
 	}
 
-	fmt.Println(resp)
+
+	bs := make([]byte, 99)
+	resp.Body.Read(bs)
+
+	fmt.Println(string(bs))
+	// fmt.Println(resp)
 }
