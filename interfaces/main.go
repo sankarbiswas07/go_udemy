@@ -20,7 +20,7 @@ func main() {
 }
 
 func printGreeting(b bot) {
-	fmt.Println((b.getGreeting()))
+	fmt.Println(b.getGreeting())
 }
 
 func (eb englishBot) getGreeting() string {
