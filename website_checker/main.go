@@ -22,20 +22,29 @@ func main() {
 		go checkLink(link, c)
 	}
 
+	//76. Receiving message
+
 	// message is a blocking operating
 	// when for ends. the code block wait until a message comes in channel
 	// channel closed immediately when first message come
 	// Everything in a main.go will be in a main routine
 
 	// simply listen in channel means blocking till come first message
-	fmt.Println(<-c)
-	fmt.Println(<-c)
-	fmt.Println(<-c)
-	fmt.Println(<-c)
-	fmt.Println(<-c)
+	// fmt.Println(<-c)
+	// fmt.Println(<-c)
+	// fmt.Println(<-c)
+	// fmt.Println(<-c)
+	// fmt.Println(<-c)
 	// fmt.Println(<-c)
 	// if you uncomment it. terminal will wait for signal
 	// as <- means a blocking, in such case next "END" will never be printed.
+
+	//77. Receiving messages | one way
+
+	for i := 0; i < len(links); i++ {
+		fmt.Println(<-c)
+	}
+
 	fmt.Println("END")
 }
 
