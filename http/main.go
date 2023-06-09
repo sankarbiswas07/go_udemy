@@ -2,21 +2,14 @@ package main
 
 import (
 	"fmt"
+	"io"
 	"net/http"
 	"os"
 )
 
+type logWriter struct{}
+
 func main() {
-	// What is the type of response ?
-	// https://pkg.go.dev/net/http@go1.20.4#Response
-
-	// Response's main thing is the body part,
-	// Which is type Body io.ReadCloser,
-	// let's get into thing type
-
-	// check ReadMe.md for
-	// understating of Response => https://pkg.go.dev/net/http@go1.20.4#Response
-	// So we can understand the response.body type "io.ReadCloser"
 	resp, err := http.Get("http://google.com")
 
 	if err != nil {
@@ -25,4 +18,21 @@ func main() {
 	}
 
 	fmt.Println(resp)
+	lw := logWriter{}
+
+	// Short-hand
+	// se io.Copy
+	io.Copy(lw, resp.Body)
+
+	bs := make([]byte, 99)
+	resp.Body.Read(bs)
+
+	fmt.Println(string(bs))
+	fmt.Println(resp)
+}
+
+func (logWriter) Write(bs []byte) (int, error) {
+	fmt.Println(string(bs))
+	fmt.Println("Just write this many bytes:", len(bs))
+	return len(bs), nil
 }
