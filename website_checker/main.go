@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"net/http"
+	"time"
 )
 
 func main() {
@@ -50,8 +51,16 @@ func main() {
 	// }
 
 	// 79. Alternative Loop syntax
-	for l := range c {
-		go checkLink(l, c)
+	// for l := range c {
+	// 	go checkLink(l, c)
+	// }
+
+	// 80,81,82 | a good way to implement a timer control
+	for l:= range c {
+		go func(link string){
+			time.Sleep(3000 * time.Millisecond)
+			checkLink(link, c)
+		}(l)
 	}
 
 	fmt.Println("END")
