@@ -40,9 +40,13 @@ func main() {
 	// as <- means a blocking, in such case next "END" will never be printed.
 
 	//77. Receiving messages | one way
+	// for i := 0; i < len(links); i++ {
+	// 	fmt.Println(<-c)
+	// }
 
-	for i := 0; i < len(links); i++ {
-		fmt.Println(<-c)
+	// 78. Repeating Routines
+	for{
+		go checkLink(<-c, c)
 	}
 
 	fmt.Println("END")
@@ -51,11 +55,11 @@ func main() {
 func checkLink(link string, c chan string) {
 	_, err := http.Get(link)
 	if err != nil {
-		// fmt.Println(link, "might be down !")
-		c <- link + " might be down !"
+		fmt.Println(link, "might be down !")
+		c <- link
 		return
 	}
 	// How can we communicate or using channel
-	// fmt.Println(link, "is up!")
-	c <- link + " link is up !"
+	fmt.Println(link, "is up!")
+	c <- link
 }
