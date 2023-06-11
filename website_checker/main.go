@@ -45,8 +45,13 @@ func main() {
 	// }
 
 	// 78. Repeating Routines
-	for{
-		go checkLink(<-c, c)
+	// for{
+	// 	go checkLink(<-c, c)
+	// }
+
+	// 79. Alternative Loop syntax
+	for l := range c {
+		go checkLink(l, c)
 	}
 
 	fmt.Println("END")
